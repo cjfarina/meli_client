@@ -54,16 +54,16 @@ It displays a list of four items.
 The page displayed is implemented in `app/items/pages.tsx`. It consist in a CSR component which, 
 on mount process fetches the data from `${apiPath}/items?q=:query`.
 
-> For manage efficiently a large sets of items, we should implement a lazy loading of the items
+- For manage efficiently a large sets of items, we should implement a lazy loading of the items
 with infinity scroll [https://cloudinary.com/blog/lazy-loading-with-infinite-scroll](https://cloudinary.com/blog/lazy-loading-with-infinite-scroll).
 
-> The list of images is displayed using `Image` component from Next.js. This avoid **Cumulative Layout Shift** and allows 
+- The list of images is displayed using `Image` component from Next.js. This avoid **Cumulative Layout Shift** and allows 
 **automatic lazy-loading**, and **automatic sizing** across devices. However, in a real production app, before serving the images
 to end-users, we should to Choose the right format, resize images and compress images. It's important to prepare the images in order to achieve optimum performance results. If we are dealing with a dynamic and large amount of images, we may want to consider a Content Delivery Network (CDN) to host the images. CDNs provide many images and application performance benefits such as automatic caching, file compression, and image resizing on the fly.
 
-> I use useSWR hook. SWR is a React Hooks library for data fetching. The name “SWR” is derived from stale-while-revalidate, a cache invalidation strategy popularized by HTTP RFC 5861. SWR first returns the data from cache (stale), then sends the request (revalidate), and finally comes with the up-to-date data again.
+- I use useSWR hook. SWR is a React Hooks library for data fetching. The name “SWR” is derived from stale-while-revalidate, a cache invalidation strategy popularized by HTTP RFC 5861. SWR first returns the data from cache (stale), then sends the request (revalidate), and finally comes with the up-to-date data again.
 
-> FIXME: I added SEO using NextSeo but is is not working. I have tried using Head component too, but it doesn't work. Maybe is it a setting problem. it seam it is a common issue: [https://github.com/garmeeh/next-seo/issues/966](https://github.com/garmeeh/next-seo/issues/966) 
+- FIXME: I added SEO using NextSeo but is is not working. I have tried using Head component too, but it doesn't work. Maybe is it a setting problem. it seam it is a common issue: [https://github.com/garmeeh/next-seo/issues/966](https://github.com/garmeeh/next-seo/issues/966) 
 
 ### Display an item
 
@@ -106,11 +106,11 @@ I added a simple test for `Category` component.
 ### Some important clarifications
 
 
- > I added `location` attribute to item model. It is necessary for display the location. However, it is specified in the documentation.
+ - I added `location` attribute to item model. It is necessary for display the location. However, it is specified in the documentation.
  
- > When I was finishing all the exercise, I realized than I also have to display categories in the display of a product. However, in the doc specifies that the api only return an item for that screen. So it seam I should keep the category list from  the preview list view. If so, it should be implemented using a new layout for items that keep categories list in the header. I don't know if it is only an specification error, so I decided to change the api in order that `${apiPath}/items/${params?.id}` return `{item: items, category: categories}`. Let me know please if you need I refactor it.
+ - When I was finishing all the exercise, I realized than I also have to display categories in the display of a product. However, in the doc specifies that the api only return an item for that screen. So it seam I should keep the category list from  the preview list view. If so, it should be implemented using a new layout for items that keep categories list in the header. I don't know if it is only an specification error, so I decided to change the api in order that `${apiPath}/items/${params?.id}` return `{item: items, category: categories}`. Let me know please if you need I refactor it.
  
- > In the specification says that I must request `https://api.mercadolibre.com/items/:id /description` for description. However, according to the specification, description comes in the json of item, so it wouldn't be necessary to do en extra request for getting the description.  
+ - In the specification says that I must request `https://api.mercadolibre.com/items/:id /description` for description. However, according to the specification, description comes in the json of item, so it wouldn't be necessary to do en extra request for getting the description.  
 
 
 
