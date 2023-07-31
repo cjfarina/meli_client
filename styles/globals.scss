@@ -1,0 +1,55 @@
+@import "colors.scss";
+$border-dark: rgba($very-light-gray-color, 0.88);
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; /* 100% = 16px */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: $very-light-gray-color;
+
+  line-height: normal;
+}
+
+.main-layout {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  gap: 1rem;
+
+  .meli-bar {
+    background-color: $meli-color;
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    height: 60px;
+    z-index: -1;
+  }
+
+  .search-layout {
+    grid-column: col-start 2 / span 10;
+  }
+
+  .children-layout {
+    grid-column: col-start 2 / span 10;
+  }
+}
+
+// Remove lateral padding in mobile.
+@media (max-width: 1250px) {
+  .search-layout {
+    grid-column: col-start 1 / span 12;
+  }
+
+  .children-layout {
+    grid-column: col-start 1 / span 12;
+  }
+}

@@ -1,0 +1,42 @@
+@import "../styles/colors.scss";
+
+.searchNav {
+  padding: 10px;
+  width: 100%;
+}
+
+.searchForm {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  & img {
+    margin: 0 1rem;
+  }
+  & input {
+    width: 100%;
+    max-width: 1200px;
+    border: none;
+    font-size: 1.125rem; //18px
+    padding-left: 1rem;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & button {
+    margin-left: -5px;
+    width: 35px;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.searchInput {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

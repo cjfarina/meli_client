@@ -1,0 +1,77 @@
+@import "../../styles/colors.scss";
+
+.ListItems {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  background-color: $white-color;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.ListItemCard {
+  display: flex;
+  text-decoration: none;
+  color: $dark-gray-color;
+  // margin: 1px 0px;
+  border-bottom: 1px solid $very-light-gray-color;
+
+  &:active {
+    background-color: $very-light-gray-color;
+  }
+}
+
+.listItemCardBody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+
+.listItemCardImage {
+  padding: 1rem 0;
+  border-radius: 4px;
+
+  img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+}
+
+.listItemCardPriceAndShip {
+  font-size: 1.5rem;
+  display: flex;
+  white-space: nowrap;
+}
+
+.listItemCardFreeShipping {
+  margin-top: 5px;
+  margin-left: 8px;
+  display: flex;
+  padding-top: 2px;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgb(53, 199, 53);
+  width: 16px;
+  height: 16px;
+}
+
+.listItemCardTitle {
+  padding-top: 1rem;
+  font-size: 1.125rem;
+}
+
+.listItemCardLocation {
+  font-size: 0.75rem;
+  padding: 1rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .listItemCardLocation {
+    display: none;
+  }
+}
