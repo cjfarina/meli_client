@@ -49,10 +49,10 @@ The layout of this site is implemented in `/app/layout.tsx` and I use `display: 
 When You open http://localhost:3000 a search bar is displayed. This bar is implemented in SearchInput.tsx. 
 
 ### List items
-After enter on the input or click on search button it is redirected to `/items?search='query'`. 
+After enter on the input or click on search button it is redirected to `/items?search=:query`. 
 It displays a list of four items.
 The page displayed is implemented in `app/items/pages.tsx`. It consist in a CSR component which, 
-on mount process fetches the data from `${apiPath}/items?q=query`.
+on mount process fetches the data from `${apiPath}/items?q=:query`.
 
 > For manage efficiently a large sets of items, we should implement a lazy loading of the items
 with infinity scroll [https://cloudinary.com/blog/lazy-loading-with-infinite-scroll](https://cloudinary.com/blog/lazy-loading-with-infinite-scroll).

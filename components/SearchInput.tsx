@@ -17,7 +17,7 @@ const SearchInput = () => {
     e.preventDefault();
 
     const encodedSearchQuery = encodeURI(searchQuery);
-    //Redirect to /items?search="query"
+    //Redirect to /items?search=:query
     router.push(`/items?search=${encodedSearchQuery}`);
   };
 
