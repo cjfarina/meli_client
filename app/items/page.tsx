@@ -69,11 +69,11 @@ const SearchPage = () => {
 
                 <div className={styles.listItemCardBody}>
                   <div className={styles.listItemCardPriceAndShip}>
-                    {item?.price.currency +
+                    {item?.price?.currency +
                       " " +
-                      item?.price.amount.toLocaleString("es-AR") +
+                      item?.price?.amount.toLocaleString("es-AR") +
                       "," +
-                      item?.price.decimals}
+                      item?.price?.decimals}
                     {item.free_shipping && (
                       <div className={styles.listItemCardFreeShipping}>
                         <Image
