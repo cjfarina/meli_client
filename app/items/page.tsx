@@ -27,8 +27,8 @@ const SearchPage = () => {
   const encodedSearchQuery = encodeURI(searchQuery);
 
   /**
-   * I use useSWR hook. SWR is a React Hooks library for data fetching. The name “SWR” is derived 
-   * from stale-while-revalidate, a cache invalidation strategy popularized by HTTP RFC 5861. SWR 
+   * I use useSWR hook. SWR is a React Hooks library for data fetching. The name “SWR” is derived
+   * from stale-while-revalidate, a cache invalidation strategy popularized by HTTP RFC 5861. SWR
    * first returns the data from cache (stale), then sends the request (revalidate), and finally
    * comes with the up-to-date data again.
    */
@@ -60,7 +60,7 @@ const SearchPage = () => {
               >
                 <div className={styles.listItemCardImage}>
                   <Image
-                    src={serverPath + "/images/" + item.picture}
+                    src={item.picture}
                     width={180}
                     height={180}
                     alt={"Picture of " + item.title}

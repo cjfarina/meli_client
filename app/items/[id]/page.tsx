@@ -15,7 +15,7 @@ const ItemPage = async ({ params }: any) => {
         <section className={styles.itemBody}>
           <div className={styles.itemImage}>
             <Image
-              src={serverPath + "/images/" + item.picture}
+              src={item.picture}
               width={680}
               height={680}
               sizes="100vw"
@@ -28,11 +28,11 @@ const ItemPage = async ({ params }: any) => {
             </div>
             <div className={styles.itemDataTitle}>{item.title}</div>
             <div className={styles.itemDataPrice}>
-              {item?.price.currency +
+              {item?.price?.currency +
                 " " +
-                item?.price.amount.toLocaleString("es-AR") +
+                item?.price?.amount?.toLocaleString("es-AR") +
                 "," +
-                item?.price.decimals}
+                item?.price?.decimals}
             </div>
             <button className={styles.itemDataButton}>Comprar</button>
           </div>
